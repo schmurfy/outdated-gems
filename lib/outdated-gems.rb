@@ -32,19 +32,17 @@ if (bundle = `bundle show`) && !bundle.include?("Could not locate Gemfile")
     else
       unless outdated_gems.empty?
         puts "\nOutdated gems:"
-        puts "---"
         outdated_gems.each do |name, change|
-          puts "#{name}: #{change}"
+          puts "  #{name}: #{change}"
         end
-        puts "---\n"
+        puts ""
       end
       unless outdated_edge_gems.empty?
         puts "\nOutdated gems (including prereleases):"
-        puts "---"
         outdated_edge_gems.each do |name, change|
-          puts "#{name}: #{change}"
+          puts "  #{name}: #{change}"
         end
-        puts "---\n"
+        puts ""
       end
     end
     unless unfound_gems.empty?
